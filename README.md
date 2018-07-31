@@ -34,7 +34,7 @@ Response body:
 
 ***
 
-### Request PATCH /configs/
+### [save] Request PATCH /configs/
 
 Auth: http basic header
 
@@ -50,7 +50,7 @@ Response [200, 400, 401]
 
 ***
 
-### Request POST /configs/
+### [deploy] Request POST /configs/
 
 Auth: http basic header
 

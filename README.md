@@ -1,10 +1,6 @@
 # confeditor
 
-ConfEditor
-
-Request
-
-GET /configs/
+### Request GET /configs/
 
 Auth: http basic
 
@@ -20,13 +16,9 @@ Response body:
 ]
 ```
 
-Request
+***
 
-PATCH /configs/
-
-Request
-
-GET /configs/
+### Request PATCH /configs/
 
 Auth: http basic
 
@@ -40,14 +32,9 @@ Body:
 
 Response [200, 400, 401]
 
+***
 
-Request
-
-POST /configs/
-
-Request
-
-GET /configs/
+### Request POST /configs/
 
 Auth: http basic
 

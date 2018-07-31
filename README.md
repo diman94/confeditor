@@ -24,12 +24,10 @@ Response [200, 401]
 
 Response body:
 ```
-[
-    {
+{
     "Name": str,
     "Body": str
-    }
-]
+}
 ```
 
 ***

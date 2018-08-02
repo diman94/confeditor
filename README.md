@@ -40,10 +40,7 @@ Response [200, 401]
 
 Response body:
 ```
-{
-    "Name": str,
-    "Body": str
-}
+Text/Json
 ```
 
 ***
@@ -54,10 +51,7 @@ Auth: http basic header
 
 Body: 
 ```
-{
-    "Name": str,
-    "Body": str
-}
+Text/Json
 ```
 
 Response [200, 400, 401]
@@ -70,10 +64,7 @@ Auth: http basic header
 
 Body: 
 ```
-{
-    "Name": str,
-    "Body": str
-}
+Text/Json
 ```
 
 Response [200, 400, 401]

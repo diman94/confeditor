@@ -25,8 +25,10 @@ Response [200, 401]
 Response body:
 ```
 [
-    "alpha.conf",
-    "beta.conf"
+    "alpha.json",
+    "beta.json",
+    "gamma.xml",
+    "omega.yml",
 ]
 ```
 

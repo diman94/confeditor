@@ -9,9 +9,10 @@ class ConfigStorage:
 
     def __init__(self):
         self._configs = {
-            'aplha.json': {'Name': 'Alpha', 'Host': '127.0.0.1'},
+            'alpha.json': {'Name': 'Alpha', 'Host': '127.0.0.1'},
             'beta.json': {'Name': 'Beta', 'Host': '127.0.0.1'},
-            'gamma.json': {'Name': 'Gamma', 'Host': '127.0.0.1'},
+            'gamma.xml': '<?xml version="1.0" encoding="UTF-8"?>\n'
+                         '<hello>world</hello>',
         }
 
     def list(self):
@@ -36,7 +37,8 @@ async def list_all(request):
 
 @app.route('/configs/<name>/', methods=['GET', 'OPTIONS'])
 async def list_one(request: SanicRequest, name):
-    return json({'Type': 'json', 'Body': storage.get_str(name)})
+    filetype = name.split('.')[-1]
+    return json({'Type': filetype, 'Body': storage.get_str(name)})
 
 
 @app.route('/configs/<name>/', methods=['POST', 'PATCH'])

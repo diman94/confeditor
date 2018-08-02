@@ -2,6 +2,7 @@ from sanic import Sanic
 from sanic.request import Request as SanicRequest
 from sanic.response import json
 from sanic_cors import CORS, cross_origin
+from json import dumps
 
 
 class ConfigStorage:
@@ -16,8 +17,8 @@ class ConfigStorage:
     def list(self):
         return self._configs.keys()
 
-    def get(self, name):
-        return self._configs.get(name)
+    def get_str(self, name):
+        return dumps(self._configs.get(name))
 
     def save(self, name, body):
         self._configs[name] = body
@@ -35,12 +36,12 @@ async def list_all(request):
 
 @app.route('/configs/<name>/', methods=['GET', 'OPTIONS'])
 async def list_one(request: SanicRequest, name):
-    return json(storage.get(name))
+    return json({'Type': 'json', 'Body': storage.get_str(name)})
 
 
 @app.route('/configs/<name>/', methods=['POST', 'PATCH'])
 async def list_one(request: SanicRequest, name):
-    storage.save(name, request.json)
+    storage.save(name, request.json['Body'])
     return json({'ok': 'ok :)'})
 
 if __name__ == '__main__':
